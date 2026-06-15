@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Solar Punch Studio</title>
+  <meta name="description" content="Professional mixing, mastering, vocal tuning, beat production and AI music creation services. Remote worldwide delivery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .services-full { padding: 80px 40px; max-width: var(--max-w); margin: 0 auto; }
+    .service-row {
+      display: grid; grid-template-columns: 1fr 2fr auto;
+      gap: 48px; align-items: start;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-row:last-child { border-bottom: none; }
+    .service-row-num {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--border);
+      line-height: 1;
+    }
+    .service-row-body {}
+    .service-row-body h2 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+    .service-row-body p {
+      color: var(--light); font-weight: 300; line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .service-includes {
+      display: flex; flex-direction: column; gap: 8px; margin-top: 16px;
+    }
+    .service-includes li {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .service-includes li::before {
+      content: '◦';
+      color: var(--sun);
+    }
+    .service-row-price { text-align: right; white-space: nowrap; }
+    .service-row-price .price-num {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      color: var(--sun);
+      line-height: 1;
+      display: block;
+    }
+    .service-row-price .price-note {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      display: block;
+      margin-top: 6px;
+    }
+    .service-row-price .btn { margin-top: 16px; }
+    @media (max-width: 800px) {
+      .service-row { grid-template-columns: 1fr; gap: 24px; }
+      .service-row-price { text-align: left; }
+      .services-full { padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-solar">SOLAR</span><span class="logo-punch">PUNCH</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="about.html">Studio</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label">What We Offer</p>
+    <h1>Services</h1>
+    <p>Studio-quality production delivered remotely or in-person. Every service is handled by Gus personally — no outsourcing, no templates.</p>
+  </div>
+
+  <div class="services-full">
+
+    <div class="service-row">
+      <div class="service-row-num">01</div>
+      <div class="service-row-body">
+        <h2>Industry-Ready Mastering</h2>
+        <p>Make your mix translate everywhere: louder, clearer, tighter — without killing the vibe. Your track processed to commercial loudness standards that hold up on any speaker, earbuds to club system.</p>
+        <ul class="service-includes">
+          <li>Loudness optimization (streaming + club standards)</li>
+          <li>Stereo width enhancement</li>
+          <li>Low-end tightening and high-end clarity</li>
+          <li>2 revisions included</li>
+          <li>Delivery: 48–72 hours</li>
+        </ul>
+      </div>
+      <div class="service-row-price">
+        <span class="price-num">$100</span>
+        <span class="price-note">per track</span>
+        <a href="contact.html?service=mastering" class="btn btn-outline">Book This</a>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row-num">02</div>
+      <div class="service-row-body">
+        <h2>Vocal Tuning + Timing</h2>
+        <p>Clean pitch and tight timing that sits in the pocket — natural, not robotic. Melodyne-style correction that preserves your artist's character and emotion while locking everything to the grid.</p>
+        <ul class="service-includes">
+          <li>Pitch correction (transparent and natural)</li>
+          <li>Timing alignment to grid</li>
+          <li>Breath and artifact cleanup</li>
+          <li>Works on full vocal stacks</li>
+          <li>Delivery: 24–48 hours</li>
+        </ul>
+      </div>
+      <div class="service-row-price">
+        <span class="price-num">$50</span>
+        <span class="price-note">per song</span>
+        <a href="contact.html?service=vocals" class="btn btn-outline">Book This</a>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row-num">03</div>
+      <div class="service-row-body">
+        <h2>Mix &amp; Master</h2>
+        <p>Release-ready sound from top to bottom. A full purposeful mix followed by a cohesive master — the complete treatment that gets your record sounding professional across every platform.</p>
+        <ul class="service-includes">
+          <li>Full stem mix (up to 40 tracks)</li>
+          <li>Professional mastering included</li>
+          <li>Frequency balance, dynamics, and space</li>
+          <li>3 revisions included</li>
+          <li>Delivery: 5–7 days</li>
+        </ul>
+      </div>
+      <div class="service-row-price">
+        <span class="price-num">$400</span>
+        <span class="price-note">per track</span>
+        <a href="contact.html?service=mixmaster" class="btn btn-primary">Book This</a>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row-num">04</div>
+      <div class="service-row-body">
+        <h2>AI-Powered Music Creation</h2>
+        <p>Fast, usable music drafts built for modern workflows. Two distinct A/B versions generated and refined, plus a final bounce of your chosen direction. Ideal for content creators, sync licensing, or quick-turn projects.</p>
+        <ul class="service-includes">
+          <li>2 full A/B concept versions</li>
+          <li>Final bounce of chosen version</li>
+          <li>Genre-flexible: hip-hop, corrido, lo-fi, pop, and more</li>
+          <li>Royalty-free for commercial use</li>
+          <li>Delivery: 24–48 hours</li>
+        </ul>
+      </div>
+      <div class="service-row-price">
+        <span class="price-num">$50</span>
+        <span class="price-note">per project</span>
+        <a href="contact.html?service=ai-music" class="btn btn-outline">Book This</a>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row-num">05</div>
+      <div class="service-row-body">
+        <h2>Custom Beat Production</h2>
+        <p>Original beats built from scratch for your project. Boom bap, G-funk, corrido tumbado, indie lo-fi, trap — specify your vision and we deliver a track tuned to your exact needs.</p>
+        <ul class="service-includes">
+          <li>Full custom production from scratch</li>
+          <li>Genre-specific instrumentation and arrangement</li>
+          <li>Tagged demo + untagged final (with license)</li>
+          <li>2 revisions included</li>
+          <li>Delivery: 3–5 days</li>
+        </ul>
+      </div>
+      <div class="service-row-price">
+        <span class="price-num">$150+</span>
+        <span class="price-note">starting price</span>
+        <a href="contact.html?service=custom-beat" class="btn btn-outline">Inquire</a>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Not Sure What You Need?</h2>
+      <p>Send us a message — we'll figure out the right service for your project together.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        <a href="store.html" class="btn btn-ghost">Browse the Store</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-solar">SOLAR</span><span class="logo-punch">PUNCH</span>
+        <p>Professional music production and recording services delivered remotely &amp; in person in Puerto Vallarta, MX</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/solarpunchstudio" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://beatstars.com/SolarPunchStudio" target="_blank" rel="noopener">BeatStars</a>
+          <a href="https://linktr.ee/SolarPunch" target="_blank" rel="noopener">Linktree</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="store.html">Store</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:SolarPunchStudio@gmail.com">SolarPunchStudio@gmail.com</a></li>
+          <li><a href="https://wa.me/523222015968" target="_blank" rel="noopener">+52 322 201 5968</a></li>
+          <li>Puerto Vallarta, Mexico</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Solar Punch Studio. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/523222015968?text=Hi%20Solar%20Punch%20Studio%2C%20I%27m%20interested%20in%20your%20services" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
