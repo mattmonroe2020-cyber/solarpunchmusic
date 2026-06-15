@@ -9,6 +9,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css?v=2" />
+  <style>
+    .sound-card {
+      border: 1px solid var(--border);
+      background: var(--off-black);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .sound-card:hover { border-color: var(--sun); transform: translateY(-4px); }
+    .sound-video { position: relative; width: 100%; padding-top: 56.25%; background: #000; border-bottom: 1px solid var(--border); }
+    .sound-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .sound-info { padding: 18px 22px 20px; }
+    .sound-info h4 { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.05; margin-bottom: 5px; }
+    .sound-info p { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; }
+  </style>
 </head>
 <body>
 
@@ -34,6 +49,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
+      <div class="hero-glow"></div>
       <div class="grain"></div>
     </div>
     <div class="hero-content">
@@ -143,31 +159,31 @@
       <p class="section-sub">Recent productions from Solar Punch Studio</p>
     </div>
     <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #ff6b35 0%, #f7c59f 100%);">
-          <span>G-FUNK BOOM BAP</span>
+      <div class="sound-card">
+        <div class="sound-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/-35cdhYy2c4" title="Don't Play That — Solar Punch Music" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="portfolio-info">
-          <h4>West Coast Vibes</h4>
-          <p>G-funk influenced boom bap · 90 BPM · F minor</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #2d1b69 0%, #7b2d8b 100%);">
-          <span>CORRIDO TUMBADO</span>
-        </div>
-        <div class="portfolio-info">
-          <h4>Desierto Psicodélico</h4>
-          <p>Psychedelic corrido · 75 BPM · C# minor</p>
+        <div class="sound-info">
+          <h4>Don't Play That</h4>
+          <p>Solar Punch Music</p>
         </div>
       </div>
-      <div class="portfolio-card">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #1a1a2e 0%, #4a9eff 100%);">
-          <span>INDIE LO-FI</span>
+      <div class="sound-card">
+        <div class="sound-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/tIAr6CQcJ4I" title="Marea Alta — Michelle Go! Ft. Gallo Güero" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="portfolio-info">
-          <h4>Midnight Sessions</h4>
-          <p>Indie lo-fi hip hop · 85 BPM · D major</p>
+        <div class="sound-info">
+          <h4>Marea Alta</h4>
+          <p>Michelle Go! Ft. Gallo Güero</p>
+        </div>
+      </div>
+      <div class="sound-card">
+        <div class="sound-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/Os_IXyhK_pM" title="Te Lo Cuento — Solar Punch x Gaby Swan x Azul Dario x El Gallo Güero" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="sound-info">
+          <h4>Te Lo Cuento</h4>
+          <p>Solar Punch × Gaby Swan</p>
         </div>
       </div>
     </div>
