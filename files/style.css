@@ -62,6 +62,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .logo-solar { color: var(--sun); }
 .logo-punch { color: var(--white); }
+.nav-logo img { height: 46px; width: auto; display: block; }
 
 .nav-links {
   display: flex; align-items: center; gap: 32px;
@@ -161,6 +162,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-family: var(--font-display);
   line-height: 0.9;
   margin-bottom: 24px;
+}
+.hero-logo { margin-bottom: 28px; }
+.hero-logo img {
+  width: min(540px, 86vw);
+  height: auto;
+  animation: fade-up 0.8s 0.2s both;
+  filter: drop-shadow(0 12px 44px rgba(245,166,35,0.14));
 }
 .hero-line-1 {
   display: block;
@@ -698,6 +706,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .nav { padding: 0 24px; }
+  .nav-logo img { height: 40px; }
   .nav-links {
     display: none;
     position: fixed; inset: 0; top: var(--nav-h);
