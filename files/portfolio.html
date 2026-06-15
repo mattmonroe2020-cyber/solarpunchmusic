@@ -4,92 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio — Solar Punch Studio</title>
-  <meta name="description" content="Recent productions from Solar Punch Studio across Hip-Hop, Urban, Latin Trap, Indie, Pop, Música Mexicana and more. Listen on Spotify." />
+  <meta name="description" content="Recent productions from Solar Punch Studio across Hip-Hop, Urban, Latin Trap, Indie, Pop, Música Mexicana and more. Watch the videos and listen on Spotify." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .portfolio-page { padding: 64px 40px 100px; max-width: var(--max-w); margin: 0 auto; }
+    .portfolio-header {
+      text-align: center;
+      padding: calc(var(--nav-h) + 56px) 24px 8px;
+      max-width: 840px; margin: 0 auto;
+    }
+    .portfolio-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      line-height: 0.95; margin-bottom: 14px;
+    }
+    .portfolio-header p { color: var(--light); font-size: 1.05rem; font-weight: 300; }
+
+    .portfolio-page { padding: 32px 40px 100px; max-width: var(--max-w); margin: 0 auto; }
 
     .filter-bar {
       display: flex; flex-wrap: wrap; gap: 10px;
-      margin-bottom: 48px;
+      justify-content: center;
+      margin-bottom: 44px;
     }
     .filter-btn {
       font-family: var(--font-mono);
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--light);
-      padding: 8px 18px;
+      padding: 9px 22px;
       border: 1px solid var(--border);
+      border-radius: 100px;
       background: transparent;
       transition: all var(--transition);
     }
     .filter-btn:hover { border-color: var(--sun); color: var(--sun); }
     .filter-btn.active { background: var(--sun); color: var(--black); border-color: var(--sun); }
 
-    .portfolio-card { display: flex; flex-direction: column; }
-    .portfolio-art {
-      position: relative;
-      height: 220px;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-direction: column;
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
     }
+    .portfolio-card {
+      border: 1px solid var(--border);
+      background: var(--off-black);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .portfolio-card:hover { border-color: var(--sun); transform: translateY(-4px); }
+    .portfolio-card.hide { display: none; }
+
+    .portfolio-video {
+      position: relative; width: 100%; padding-top: 56.25%;
+      background: #000; border-bottom: 1px solid var(--border);
+    }
+    .portfolio-video iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+    }
+
+    .portfolio-info { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
     .portfolio-role {
-      font-family: var(--font-mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: rgba(255,255,255,0.85);
-      padding: 4px 9px;
       align-self: flex-start;
+      font-family: var(--font-mono);
+      font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--sun);
+      border: 1px solid var(--sun);
+      padding: 4px 10px;
     }
-    .portfolio-art .art-title {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      letter-spacing: 0.04em;
-      line-height: 1;
-      color: #fff;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-      background: none; padding: 0;
-    }
-    .portfolio-info { display: flex; flex-direction: column; gap: 10px; flex: 1; }
-    .portfolio-info h4 { font-size: 1.4rem; }
-    .portfolio-artist {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      color: var(--light);
-      font-weight: 300;
-    }
-    .portfolio-genres { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+    .portfolio-info h4 { font-family: var(--font-display); font-size: 1.5rem; line-height: 1; }
+    .portfolio-artist { font-size: 0.9rem; color: var(--light); font-weight: 300; margin-top: -4px; }
+    .portfolio-genres { display: flex; flex-wrap: wrap; gap: 6px; }
     .portfolio-genres span {
       font-family: var(--font-mono);
-      font-size: 0.56rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--muted);
       border: 1px solid var(--border);
       padding: 3px 8px;
     }
-    .portfolio-listen {
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--sun);
-      margin-top: auto;
-      padding-top: 8px;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: gap var(--transition);
+    .portfolio-spotify {
+      width: 100%; justify-content: center; margin-top: auto;
     }
-    .portfolio-listen:hover { gap: 12px; }
-    .portfolio-card.hide { display: none; }
 
-    @media (max-width: 800px) { .portfolio-page { padding: 48px 24px 72px; } }
+    @media (max-width: 800px) {
+      .portfolio-page { padding: 24px 24px 72px; }
+      .portfolio-header { padding: calc(var(--nav-h) + 40px) 24px 8px; }
+    }
   </style>
 </head>
 <body>
@@ -112,10 +114,9 @@
     </ul>
   </nav>
 
-  <div class="page-hero">
-    <p class="section-label">Recent Work</p>
+  <div class="portfolio-header">
     <h1>Portfolio</h1>
-    <p>Productions across Hip-Hop, Urban, Latin Trap, Indie, Pop, Música Mexicana &amp; more — recorded, mixed and mastered at Solar Punch Studio.</p>
+    <p>Productions across Hip-Hop, Urban, Latin Trap, Indie, Pop, Música Mexicana &amp; more</p>
   </div>
 
   <div class="portfolio-page">
@@ -132,119 +133,119 @@
     <div class="portfolio-grid" id="portfolioGrid">
 
       <div class="portfolio-card" data-genres="hip-hop urban">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #ff6b35 0%, #2d1b69 100%);">
-          <span class="portfolio-role">Full Production</span>
-          <span class="art-title">INVERTED</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/pU67xzgMdlA" title="INVERTED — Adam Strain" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Full Production</span>
           <h4>INVERTED</h4>
           <p class="portfolio-artist">Adam Strain</p>
           <div class="portfolio-genres"><span>Hip-Hop</span><span>Urban</span></div>
-          <a href="https://open.spotify.com/track/5z54iOQe8MRTB1hw2avToE" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/5z54iOQe8MRTB1hw2avToE" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 
       <div class="portfolio-card" data-genres="pop latin-trap">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #f5a623 0%, #e8351a 100%);">
-          <span class="portfolio-role">Full Production</span>
-          <span class="art-title">ALTA MAREA</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/tIAr6CQcJ4I" title="ALTA MAREA — Michelle Go!" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Full Production</span>
           <h4>ALTA MAREA</h4>
           <p class="portfolio-artist">Michelle Go!</p>
           <div class="portfolio-genres"><span>Pop</span><span>Latin Trap</span></div>
-          <a href="https://open.spotify.com/track/7fvdW3CmKHPLF4GRLYteWv" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/7fvdW3CmKHPLF4GRLYteWv" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 
       <div class="portfolio-card" data-genres="latin-trap urban">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #7b2d8b 0%, #4a9eff 100%);">
-          <span class="portfolio-role">Full Production</span>
-          <span class="art-title">TE LO CUENTO</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/Os_IXyhK_pM" title="TE LO CUENTO — Gaby Swan x Azul Dario x El Gallo Güero" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Full Production</span>
           <h4>TE LO CUENTO</h4>
           <p class="portfolio-artist">Gaby Swan × Azul Dario × El Gallo Güero</p>
           <div class="portfolio-genres"><span>Latin Trap</span><span>Urban</span></div>
-          <a href="https://open.spotify.com/track/4UkH92PJizcWd05jafFbkI" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/4UkH92PJizcWd05jafFbkI" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 
       <div class="portfolio-card" data-genres="latin-trap">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #e8351a 0%, #c9a84c 100%);">
-          <span class="portfolio-role">Full Production</span>
-          <span class="art-title">SABOR PIÑA</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/tGdGk_sysDU" title="SABOR PIÑA — Socra Robes x El Gallo Güero" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Full Production</span>
           <h4>SABOR PIÑA</h4>
           <p class="portfolio-artist">Socra Robes × El Gallo Güero</p>
           <div class="portfolio-genres"><span>Latin Trap</span></div>
-          <a href="https://open.spotify.com/track/50BLk3Zkm0JXOAJFJL7d4O" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/50BLk3Zkm0JXOAJFJL7d4O" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 
       <div class="portfolio-card" data-genres="hip-hop">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #1a1a2e 0%, #ff6b35 100%);">
-          <span class="portfolio-role">Full Production</span>
-          <span class="art-title">CAKE</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/zF1uk-aTl7M" title="CAKE — Hemingwey x Adam Strain" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Full Production</span>
           <h4>CAKE</h4>
           <p class="portfolio-artist">Hemingwey × Adam Strain</p>
           <div class="portfolio-genres"><span>Hip-Hop</span></div>
-          <a href="https://open.spotify.com/track/5QuuvhAwduhNODi38Y5Kxe" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/5QuuvhAwduhNODi38Y5Kxe" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 
       <div class="portfolio-card" data-genres="urban latin-trap">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #2d1b69 0%, #f5a623 100%);">
-          <span class="portfolio-role">Full Production</span>
-          <span class="art-title">MILLÓN PENDIENTE</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/T6y0YrvDhxk" title="MILLÓN PENDIENTE — Dante RMZ x El Gallo Güero" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Full Production</span>
           <h4>MILLÓN PENDIENTE</h4>
           <p class="portfolio-artist">Dante RMZ × El Gallo Güero</p>
           <div class="portfolio-genres"><span>Urban</span><span>Latin Trap</span></div>
-          <a href="https://open.spotify.com/track/45doS2TdYuQWRcA3bqF2Q5" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/45doS2TdYuQWRcA3bqF2Q5" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 
       <div class="portfolio-card" data-genres="indie pop">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #4a9eff 0%, #f7c59f 100%);">
-          <span class="portfolio-role">Full Production</span>
-          <span class="art-title">VEN A MÍ</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/kxydUq095eU" title="VEN A MÍ — Gaby Swan" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Full Production</span>
           <h4>VEN A MÍ</h4>
           <p class="portfolio-artist">Gaby Swan</p>
           <div class="portfolio-genres"><span>Indie</span><span>Pop</span></div>
-          <a href="https://open.spotify.com/track/3if80iuTlbbMCptEvhisN6" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/3if80iuTlbbMCptEvhisN6" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 
       <div class="portfolio-card" data-genres="hip-hop indie">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #111 0%, #7b2d8b 100%);">
-          <span class="portfolio-role">Mix &amp; Master</span>
-          <span class="art-title">MIRROR</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/0VQxp5qL1wA" title="MIRROR — Azul Dario" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Mix &amp; Master</span>
           <h4>MIRROR</h4>
           <p class="portfolio-artist">Azul Dario</p>
           <div class="portfolio-genres"><span>Hip-Hop</span><span>Indie</span></div>
-          <a href="https://open.spotify.com/track/7bfsELkxjRi1FNPCldzVJs" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/7bfsELkxjRi1FNPCldzVJs" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 
       <div class="portfolio-card" data-genres="hip-hop indie">
-        <div class="portfolio-art" style="background: linear-gradient(135deg, #c9a84c 0%, #1a1a2e 100%);">
-          <span class="portfolio-role">Master &amp; Engineering</span>
-          <span class="art-title">DZOGCHEN</span>
+        <div class="portfolio-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/GTC5bh19HII" title="DZOGCHEN — Sol Disciple" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
+          <span class="portfolio-role">Master &amp; Engineering</span>
           <h4>DZOGCHEN</h4>
           <p class="portfolio-artist">Sol Disciple</p>
           <div class="portfolio-genres"><span>Hip-Hop</span><span>Indie</span></div>
-          <a href="https://open.spotify.com/track/5zsmb2YeH65lhDUc11Q0gw" target="_blank" rel="noopener" class="portfolio-listen">Listen on Spotify →</a>
+          <a href="https://open.spotify.com/track/5zsmb2YeH65lhDUc11Q0gw" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
 

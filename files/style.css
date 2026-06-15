@@ -147,7 +147,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .hero-content {
   position: relative; z-index: 2;
-  max-width: 700px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
 }
 .hero-eyebrow {
   font-family: var(--font-mono);
@@ -167,6 +169,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .hero-logo img {
   width: min(540px, 86vw);
   height: auto;
+  margin: 0 auto;
   animation: fade-up 0.8s 0.2s both;
   filter: drop-shadow(0 12px 44px rgba(245,166,35,0.14));
 }
@@ -198,6 +201,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .hero-actions {
   display: flex; gap: 16px; flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 36px;
   animation: fade-up 0.8s 0.6s both;
 }
@@ -464,6 +468,33 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   animation: counter-spin 8s linear infinite;
 }
 .vinyl-label span { display: block; text-align: center; }
+
+/* ── TRUSTED BY (home) ── */
+.trusted {
+  background: var(--off-black);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 100px 40px;
+}
+.trusted-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
+.trusted-inner > .section-title { margin-bottom: 12px; }
+.trusted-lead { color: var(--light); font-weight: 300; font-size: 1.05rem; }
+.trusted-cols {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 48px; margin-top: 56px;
+}
+.trusted-col h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--sun);
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+.trusted-col p { color: var(--light); font-weight: 300; line-height: 1.6; font-size: 0.95rem; }
+@media (max-width: 800px) {
+  .trusted { padding: 72px 24px; }
+  .trusted-cols { grid-template-columns: 1fr; gap: 36px; }
+}
 
 /* ── PORTFOLIO GRID ── */
 .portfolio-grid {
