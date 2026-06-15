@@ -13,12 +13,21 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy        = "strict-origin-when-cross-origin"
 
+# CSS/JS share fixed filenames (no content hashing), so they must NOT be cached
+# as immutable — otherwise edits never reach returning visitors. Revalidate every
+# load (cheap 304s via ETag) so updates show up immediately.
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Logo can cache for a day (changes rarely)
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
