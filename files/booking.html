@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking — Solar Punch Studio</title>
+  <meta name="description" content="Book professional recording sessions at Solar Punch Studio in Puerto Vallarta. Hourly studio time, production and post-production sessions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .booking-page { padding: 64px 40px 40px; max-width: var(--max-w); margin: 0 auto; }
+    .booking-block-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 28px;
+    }
+
+    /* Rate cards */
+    .rate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 72px;
+    }
+    .rate-card {
+      background: var(--off-black);
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+      transition: background var(--transition);
+    }
+    .rate-card:hover { background: var(--dark); }
+    .rate-card.featured { background: var(--dark); }
+    .rate-card.featured::before {
+      content: 'Popular';
+      position: absolute; top: 14px; right: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--sun); border: 1px solid var(--sun); padding: 3px 8px;
+    }
+    .rate-hours {
+      font-family: var(--font-mono);
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--light); margin-bottom: 16px;
+    }
+    .rate-price {
+      font-family: var(--font-display);
+      font-size: 3.4rem; color: var(--sun); line-height: 1;
+    }
+    .rate-save {
+      font-family: var(--font-mono);
+      font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--punch); margin-top: 12px;
+    }
+
+    /* Booking layout */
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .booking-form { display: flex; flex-direction: column; gap: 24px; }
+    .form-success {
+      display: none;
+      background: rgba(245,166,35,0.1);
+      border: 1px solid var(--sun);
+      padding: 24px; text-align: center;
+    }
+    .form-success.show { display: block; }
+    .form-success h3 { font-family: var(--font-display); font-size: 1.8rem; color: var(--sun); margin-bottom: 8px; }
+    .form-success p { color: var(--light); }
+
+    /* Policy */
+    .policy { display: flex; flex-direction: column; gap: 20px; }
+    .policy-item {
+      border: 1px solid var(--border);
+      padding: 20px;
+      transition: border-color var(--transition);
+    }
+    .policy-item:hover { border-color: var(--sun); }
+    .policy-item h4 {
+      font-family: var(--font-mono);
+      font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--sun); margin-bottom: 8px;
+    }
+    .policy-item p { font-size: 0.85rem; color: var(--light); line-height: 1.6; }
+
+    @media (max-width: 800px) {
+      .booking-page { padding: 48px 24px 24px; }
+      .booking-layout { grid-template-columns: 1fr; gap: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-solar">SOLAR</span><span class="logo-punch">PUNCH</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="booking.html" class="active">Booking</a></li>
+      <li><a href="about.html">Studio</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label">Studio Sessions</p>
+    <h1>Book Studio Time</h1>
+    <p>Professional recording sessions in Puerto Vallarta. Reserve the room for tracking, production, or post — in person or hybrid.</p>
+  </div>
+
+  <div class="booking-page">
+
+    <h2 class="booking-block-title">Hourly Rates</h2>
+    <div class="rate-grid">
+      <div class="rate-card">
+        <div class="rate-hours">1 Hour</div>
+        <div class="rate-price">$30</div>
+      </div>
+      <div class="rate-card featured">
+        <div class="rate-hours">4 Hours</div>
+        <div class="rate-price">$80</div>
+        <div class="rate-save">Save $40</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-hours">8 Hours</div>
+        <div class="rate-price">$150</div>
+        <div class="rate-save">Save $90</div>
+      </div>
+    </div>
+
+    <div class="booking-layout">
+
+      <div class="booking-form">
+        <h2 class="booking-block-title" style="margin-bottom:4px;">Request a Session</h2>
+
+        <div class="form-success" id="formSuccess">
+          <h3>Request Received</h3>
+          <p>We'll confirm your session and deposit details within 24 hours.</p>
+        </div>
+
+        <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="bookingForm">
+          <input type="hidden" name="form-name" value="booking" />
+          <p style="display:none"><input name="bot-field" /></p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number (Optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+52 ..." />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Type *</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="studio-time">Studio Time (Recording Session)</option>
+                <option value="production">Production Session</option>
+                <option value="post-production">Post-Production Session</option>
+                <option value="mixing">Mixing</option>
+                <option value="mastering">Mastering</option>
+                <option value="vocal-tuning">Vocal Tuning</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div class="form-group full">
+              <label for="details">Additional Details (Optional)</label>
+              <textarea id="details" name="details" placeholder="What are you working on? How many hours? Any references…" rows="5"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 8px;">Request Booking</button>
+        </form>
+      </div>
+
+      <div>
+        <h2 class="booking-block-title" style="margin-bottom:4px;">Booking Policy</h2>
+        <div class="policy" style="margin-top:24px;">
+          <div class="policy-item">
+            <h4>Deposit</h4>
+            <p>50% deposit required to confirm booking.</p>
+          </div>
+          <div class="policy-item">
+            <h4>Rescheduling</h4>
+            <p>Free with 48h notice; 50% fee if less than 48h.</p>
+          </div>
+          <div class="policy-item">
+            <h4>Cancellations</h4>
+            <p>Full refund with 48h notice; deposit forfeited if less than 48h.</p>
+          </div>
+          <div class="policy-item">
+            <h4>Late Arrival</h4>
+            <p>Reduces session time (no automatic extension).</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Prefer to Work Remotely?</h2>
+      <p>Send stems from anywhere — we deliver release-ready results worldwide.</p>
+      <div class="cta-actions">
+        <a href="services.html" class="btn btn-primary">View Services</a>
+        <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-solar">SOLAR</span><span class="logo-punch">PUNCH</span>
+        <p>Professional music production and recording services delivered remotely &amp; in person in Puerto Vallarta, MX</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/solarpunchstudio" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://beatstars.com/SolarPunchStudio" target="_blank" rel="noopener">BeatStars</a>
+          <a href="https://linktr.ee/SolarPunch" target="_blank" rel="noopener">Linktree</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="store.html">Store</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:SolarPunchStudio@gmail.com">SolarPunchStudio@gmail.com</a></li>
+          <li><a href="https://wa.me/523222015968" target="_blank" rel="noopener">+52 322 201 5968</a></li>
+          <li>Puerto Vallarta, Mexico</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Solar Punch Studio. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/523222015968?text=Hi%20Solar%20Punch%20Studio%2C%20I%27m%20interested%20in%20booking%20studio%20time" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+  <script>
+    // Pre-select service from URL param
+    const params = new URLSearchParams(window.location.search);
+    const svc = params.get('service');
+    if (svc) {
+      const sel = document.getElementById('service');
+      if (sel) sel.value = svc;
+    }
+  </script>
+</body>
+</html>

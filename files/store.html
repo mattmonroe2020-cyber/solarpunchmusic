@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store — Solar Punch Studio</title>
+  <meta name="description" content="Professional production services and premium beats available for immediate purchase from Solar Punch Studio. Mastering, mixing, vocal tuning, AI music and beats." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .store-page { padding: 64px 40px 40px; max-width: var(--max-w); margin: 0 auto; }
+    .store-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 32px;
+      padding-top: 40px;
+    }
+
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .store-card {
+      border: 1px solid var(--border);
+      background: var(--off-black);
+      padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 16px;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .store-card:hover { border-color: var(--sun); transform: translateY(-4px); }
+    .store-card.featured { border-color: rgba(245,166,35,0.4); }
+    .store-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .store-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+    }
+    .store-price {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--sun);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .store-card > p {
+      font-size: 0.9rem;
+      color: var(--light);
+      line-height: 1.6;
+    }
+    .store-includes-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .store-includes { display: flex; flex-direction: column; gap: 7px; }
+    .store-includes li {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      color: var(--light);
+      display: flex; align-items: flex-start; gap: 9px;
+    }
+    .store-includes li::before { content: '◦'; color: var(--sun); }
+    .store-card .btn { margin-top: auto; align-self: flex-start; }
+
+    .preview-tag {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sun);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+
+    .store-note {
+      max-width: var(--max-w);
+      margin: 24px auto 0;
+      padding: 0 40px;
+    }
+    .store-note-inner {
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      font-size: 0.9rem;
+      color: var(--light);
+    }
+    .store-note-inner a { color: var(--sun); }
+
+    @media (max-width: 800px) { .store-page { padding: 48px 24px 24px; } .store-note { padding: 0 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-solar">SOLAR</span><span class="logo-punch">PUNCH</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="store.html" class="active">Store</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="about.html">Studio</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label">Buy Now</p>
+    <h1>Store</h1>
+    <p>Professional production services and beats available for immediate purchase. Pick what you need and reach out — we'll get you set up.</p>
+  </div>
+
+  <div class="store-page">
+
+    <h2 class="store-section-title">Production Services</h2>
+    <div class="store-grid">
+
+      <div class="store-card">
+        <div class="store-card-head">
+          <h3>Industry-Ready Mastering</h3>
+          <span class="store-price">$100</span>
+        </div>
+        <p>Make your mix translate everywhere: louder, clearer, tighter — without killing the vibe.</p>
+        <span class="store-includes-label">Includes</span>
+        <ul class="store-includes">
+          <li>48h turnaround</li>
+          <li>2 revisions</li>
+          <li>24-bit WAV + 16-bit streaming version</li>
+        </ul>
+        <a href="contact.html?service=mastering" class="btn btn-outline">Get This</a>
+      </div>
+
+      <div class="store-card">
+        <div class="store-card-head">
+          <h3>Vocal Tuning + Timing</h3>
+          <span class="store-price">$50</span>
+        </div>
+        <p>Clean pitch + tight timing that sits in the pocket — natural, not robotic.</p>
+        <span class="store-includes-label">Includes</span>
+        <ul class="store-includes">
+          <li>48h turnaround</li>
+          <li>1 revision</li>
+          <li>Tuned vocal stem + time-aligned stem</li>
+        </ul>
+        <a href="contact.html?service=vocals" class="btn btn-outline">Get This</a>
+      </div>
+
+      <div class="store-card">
+        <div class="store-card-head">
+          <h3>AI Music Creation</h3>
+          <span class="store-price">$50</span>
+        </div>
+        <p>Fast, usable music drafts: 2 versions (A/B) + final bounce of chosen version.</p>
+        <span class="store-includes-label">Includes</span>
+        <ul class="store-includes">
+          <li>72h turnaround</li>
+          <li>1 revision</li>
+          <li>2 versions (A/B)</li>
+          <li>Non-exclusive</li>
+        </ul>
+        <a href="contact.html?service=ai-music" class="btn btn-outline">Get This</a>
+      </div>
+
+      <div class="store-card featured">
+        <div class="store-card-head">
+          <h3>Full Mix &amp; Master</h3>
+          <span class="store-price">$400</span>
+        </div>
+        <p>Release-ready sound: purposeful mix + cohesive master.</p>
+        <span class="store-includes-label">Includes</span>
+        <ul class="store-includes">
+          <li>7 days turnaround</li>
+          <li>5 revisions</li>
+          <li>WAV + MP3 + stems</li>
+          <li>Professional quality</li>
+        </ul>
+        <a href="contact.html?service=mixmaster" class="btn btn-primary">Get This</a>
+      </div>
+
+    </div>
+
+    <h2 class="store-section-title">Premium Beats</h2>
+    <div class="store-grid">
+
+      <div class="store-card">
+        <div class="store-card-head">
+          <h3>Premium Beat — Corridos</h3>
+          <span class="store-price">$50</span>
+        </div>
+        <span class="preview-tag">♪ Audio Preview on BeatStars</span>
+        <p>Professional corridos beat with live instrumentation. Includes MP3 + WAV.</p>
+        <span class="store-includes-label">Includes</span>
+        <ul class="store-includes">
+          <li>MP3 + WAV included</li>
+          <li>Non-exclusive</li>
+          <li>Stems available (+$20)</li>
+        </ul>
+        <a href="https://beatstars.com/SolarPunchStudio" target="_blank" rel="noopener" class="btn btn-outline">Buy on BeatStars</a>
+      </div>
+
+      <div class="store-card">
+        <div class="store-card-head">
+          <h3>Premium Beat — Hip-Hop</h3>
+          <span class="store-price">$50</span>
+        </div>
+        <span class="preview-tag">♪ Audio Preview on BeatStars</span>
+        <p>Modern hip-hop beat with contemporary production. Includes MP3 + WAV.</p>
+        <span class="store-includes-label">Includes</span>
+        <ul class="store-includes">
+          <li>MP3 + WAV included</li>
+          <li>Non-exclusive</li>
+          <li>Stems available (+$20)</li>
+        </ul>
+        <a href="https://beatstars.com/SolarPunchStudio" target="_blank" rel="noopener" class="btn btn-outline">Buy on BeatStars</a>
+      </div>
+
+      <div class="store-card">
+        <div class="store-card-head">
+          <h3>Premium Beat — Reggaeton</h3>
+          <span class="store-price">$50</span>
+        </div>
+        <span class="preview-tag">♪ Audio Preview on BeatStars</span>
+        <p>Contemporary reggaeton beat with modern sound design. Includes MP3 + WAV.</p>
+        <span class="store-includes-label">Includes</span>
+        <ul class="store-includes">
+          <li>MP3 + WAV included</li>
+          <li>Non-exclusive</li>
+          <li>Stems available (+$20)</li>
+        </ul>
+        <a href="https://beatstars.com/SolarPunchStudio" target="_blank" rel="noopener" class="btn btn-outline">Buy on BeatStars</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="store-note">
+    <div class="store-note-inner">
+      Browse the full beat catalog with live previews on
+      <a href="https://beatstars.com/SolarPunchStudio" target="_blank" rel="noopener">BeatStars</a>,
+      or <a href="contact.html">message us</a> for custom work and exclusive licensing.
+    </div>
+  </div>
+
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Need Something Custom?</h2>
+      <p>Custom beats, full album production and exclusive licensing — let's talk.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Start a Project</a>
+        <a href="services.html" class="btn btn-ghost">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-solar">SOLAR</span><span class="logo-punch">PUNCH</span>
+        <p>Professional music production and recording services delivered remotely &amp; in person in Puerto Vallarta, MX</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/solarpunchstudio" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://beatstars.com/SolarPunchStudio" target="_blank" rel="noopener">BeatStars</a>
+          <a href="https://linktr.ee/SolarPunch" target="_blank" rel="noopener">Linktree</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="store.html">Store</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:SolarPunchStudio@gmail.com">SolarPunchStudio@gmail.com</a></li>
+          <li><a href="https://wa.me/523222015968" target="_blank" rel="noopener">+52 322 201 5968</a></li>
+          <li>Puerto Vallarta, Mexico</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Solar Punch Studio. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/523222015968?text=Hi%20Solar%20Punch%20Studio%2C%20I%27m%20interested%20in%20your%20services" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>

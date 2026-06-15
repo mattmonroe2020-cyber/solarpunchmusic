@@ -65,10 +65,40 @@
       margin-top: 6px;
     }
     .service-row-price .btn { margin-top: 16px; }
+
+    /* Custom projects + hourly */
+    .custom-section { background: var(--off-black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 40px; }
+    .custom-inner { max-width: var(--max-w); margin: 0 auto; }
+    .custom-head { text-align: center; margin-bottom: 48px; }
+    .custom-head h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 12px; }
+    .custom-head p { color: var(--light); }
+    .custom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .custom-card { border: 1px solid var(--border); padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; transition: border-color var(--transition), transform var(--transition); }
+    .custom-card:hover { border-color: var(--sun); transform: translateY(-4px); }
+    .custom-card h3 { font-family: var(--font-display); font-size: 1.5rem; }
+    .custom-card p { font-size: 0.9rem; color: var(--light); line-height: 1.6; flex: 1; }
+    .custom-price { font-family: var(--font-display); font-size: 1.8rem; color: var(--sun); }
+    .custom-price small { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--muted); display: block; text-transform: uppercase; margin-top: 4px; }
+    .custom-card .btn { align-self: flex-start; }
+
+    /* FAQ */
+    .faq-section { max-width: 820px; margin: 0 auto; padding: 80px 40px; }
+    .faq-section h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 40px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 0; font-family: var(--font-body); font-size: 1.05rem; color: var(--white); transition: color var(--transition); }
+    .faq-q:hover { color: var(--sun); }
+    .faq-q .faq-icon { font-family: var(--font-mono); color: var(--sun); transition: transform var(--transition); flex-shrink: 0; }
+    .faq-item.open .faq-q .faq-icon { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height var(--transition); }
+    .faq-a p { color: var(--light); font-weight: 300; line-height: 1.7; padding-bottom: 24px; }
+    .faq-item.open .faq-a { max-height: 240px; }
+
     @media (max-width: 800px) {
       .service-row { grid-template-columns: 1fr; gap: 24px; }
       .service-row-price { text-align: left; }
       .services-full { padding: 60px 24px; }
+      .custom-section { padding: 60px 24px; }
+      .faq-section { padding: 60px 24px; }
     }
   </style>
 </head>
@@ -180,27 +210,63 @@
       </div>
     </div>
 
-    <div class="service-row">
-      <div class="service-row-num">05</div>
-      <div class="service-row-body">
-        <h2>Custom Beat Production</h2>
-        <p>Original beats built from scratch for your project. Boom bap, G-funk, corrido tumbado, indie lo-fi, trap — specify your vision and we deliver a track tuned to your exact needs.</p>
-        <ul class="service-includes">
-          <li>Full custom production from scratch</li>
-          <li>Genre-specific instrumentation and arrangement</li>
-          <li>Tagged demo + untagged final (with license)</li>
-          <li>2 revisions included</li>
-          <li>Delivery: 3–5 days</li>
-        </ul>
+  </div>
+
+  <section class="custom-section">
+    <div class="custom-inner">
+      <div class="custom-head">
+        <h2>Custom Projects</h2>
+        <p>Tailored solutions for your unique needs.</p>
       </div>
-      <div class="service-row-price">
-        <span class="price-num">$150+</span>
-        <span class="price-note">starting price</span>
-        <a href="contact.html?service=custom-beat" class="btn btn-outline">Inquire</a>
+      <div class="custom-grid">
+        <div class="custom-card">
+          <h3>Custom Beat Production</h3>
+          <p>Original beat tailored to your sound. Includes stems, unlimited revisions, and exclusive rights.</p>
+          <div class="custom-price">Starting at $150</div>
+          <a href="contact.html?service=custom-beat" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="custom-card">
+          <h3>Full Album Production</h3>
+          <p>End-to-end production for your project: beats, recording, mixing, mastering, and creative direction.</p>
+          <div class="custom-price">Custom Quote</div>
+          <a href="contact.html?service=album" class="btn btn-outline">Discuss Your Project</a>
+        </div>
+        <div class="custom-card">
+          <h3>Digital Distribution</h3>
+          <p>Get your music on Spotify, Apple Music, and all major platforms. Includes artwork prep and release strategy.</p>
+          <div class="custom-price">Custom Quote</div>
+          <a href="contact.html?service=distribution" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="custom-card">
+          <h3>Hourly Rate</h3>
+          <p>Editing/comping, cleanup, arrangement fixes, mix feedback, production coaching, beat tweaks.</p>
+          <div class="custom-price">$30 <small>per hour · minimum 1 hour</small></div>
+          <a href="contact.html?service=hourly" class="btn btn-outline">Get Started</a>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What do you need for mastering?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Final stereo WAV, 1–2 references, target platform.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can you master from an MP3?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Possible but limited; WAV/AIFF preferred.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How do revisions work?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Tone/loudness/balance/stereo adjustments based on your notes.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What files for mixing?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Stems WAV, rough mix, BPM, 2 references.</p></div>
+    </div>
+  </section>
 
   <section class="cta-banner">
     <div class="cta-banner-inner">
@@ -264,5 +330,15 @@
   </a>
 
   <script src="main.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function (q) {
+      q.addEventListener('click', function () {
+        const item = q.closest('.faq-item');
+        const open = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  </script>
 </body>
 </html>

@@ -58,11 +58,19 @@ git push
 # Netlify auto-deploys on every push
 ```
 
-## Pages Still Needed
-- `portfolio.html` — add SoundCloud/YouTube embeds of your beats
-- `store.html`     — embed BeatStars player or link out
-- `booking.html`   — embed Calendly or use contact form
-- `about.html`     — studio info, bio, gear list
+## Pages
+All seven pages are built and cross-linked:
+- `index.html`     — Home
+- `services.html`  — À la carte + custom services, hourly rate, FAQ
+- `portfolio.html` — 9 productions, Spotify links, genre filter
+- `store.html`     — Production services + premium beats (BeatStars)
+- `booking.html`   — Hourly rates + Netlify booking-request form + policy
+- `about.html`     — Studio snapshot (uses `logo-full.png`)
+- `contact.html`   — Netlify contact form
+
+## Forms (Netlify Forms — no backend)
+Two forms post to Netlify automatically: `contact` and `booking`.
+They appear in Netlify dashboard → Forms. Set email notifications there.
 
 ## Brand Links
 - Instagram: https://instagram.com/solarpunchstudio

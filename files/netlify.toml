@@ -1,13 +1,9 @@
 # netlify.toml — Solar Punch Studio
+# Multi-page static site. No build step. Pretty URLs (/services) resolve to
+# the matching .html automatically — no SPA catch-all redirect needed.
 
 [build]
   publish = "."
-
-[[redirects]]
-  from = "/*"
-  to   = "/index.html"
-  status = 200
-  force  = false
 
 [[headers]]
   for = "/*"
