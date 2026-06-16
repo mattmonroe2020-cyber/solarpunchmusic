@@ -11,16 +11,20 @@ Clean static site. Zero backend dependencies. Fully owned.
 ## File Structure
 ```
 solar-punch-studio/
-├── index.html        # Home
-├── services.html     # Services + pricing
+├── index.html        # Home (hero, services preview, artist roster, video reel)
+├── services.html     # Services + pricing + Premium Beats + FAQ
 ├── contact.html      # Contact form (Netlify Forms)
-├── portfolio.html    # Portfolio / audio (add your embeds)
-├── store.html        # Store (links to BeatStars)
-├── booking.html      # Booking page
+├── portfolio.html    # Portfolio — YouTube embeds, Spotify links, view counts
+├── booking.html      # Booking (rates + Netlify booking form)
 ├── about.html        # Studio / About
 ├── style.css         # All styles
 ├── main.js           # Nav + scroll interactions
+├── logo-full.png     # Logo (transparent)
+├── favicon.ico + favicon-*.png + apple-touch-icon.png
 └── netlify.toml      # Netlify config
+
+Note: there is no Store page — beats live on services.html, and the nav
+"Merchandise" link points to the external store (supportthecreators.com).
 ```
 
 ## Deploy to Netlify

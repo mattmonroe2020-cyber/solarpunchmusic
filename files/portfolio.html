@@ -70,6 +70,7 @@
     }
 
     .portfolio-info { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .portfolio-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
     .portfolio-role {
       align-self: flex-start;
       font-family: var(--font-mono);
@@ -78,6 +79,21 @@
       border: 1px solid var(--sun);
       padding: 4px 10px;
     }
+    .portfolio-official {
+      font-family: var(--font-mono);
+      font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--white);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+    }
+    .portfolio-views {
+      display: flex; align-items: center; gap: 7px;
+      font-family: var(--font-mono);
+      font-size: 0.66rem; letter-spacing: 0.05em;
+      color: var(--light);
+    }
+    .portfolio-views::before { content: '▶'; color: var(--sun); font-size: 0.58rem; }
     .portfolio-info h4 { font-family: var(--font-display); font-size: 1.5rem; line-height: 1; }
     .portfolio-artist { font-size: 0.9rem; color: var(--light); font-weight: 300; margin-top: -4px; }
     .portfolio-genres { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -111,7 +127,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="store.html">Store</a></li>
+      <li><a href="https://www.supportthecreators.com" target="_blank" rel="noopener">Merchandise</a></li>
       <li><a href="booking.html">Booking</a></li>
       <li><a href="about.html">Studio</a></li>
       <li><a href="contact.html" class="nav-cta">Contact</a></li>
@@ -141,10 +157,14 @@
           <iframe src="https://www.youtube-nocookie.com/embed/pU67xzgMdlA" title="INVERTED — Adam Strain" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
-          <span class="portfolio-role">Full Production</span>
+          <div class="portfolio-meta">
+            <span class="portfolio-role">Full Production</span>
+            <span class="portfolio-official">Official Lyric Video</span>
+          </div>
           <h4>INVERTED</h4>
           <p class="portfolio-artist">Adam Strain</p>
           <div class="portfolio-genres"><span>Hip-Hop</span><span>Urban</span></div>
+          <div class="portfolio-views">12.6K views</div>
           <a href="https://open.spotify.com/track/5z54iOQe8MRTB1hw2avToE" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
@@ -154,10 +174,14 @@
           <iframe src="https://www.youtube-nocookie.com/embed/tIAr6CQcJ4I" title="ALTA MAREA — Michelle Go!" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
-          <span class="portfolio-role">Full Production</span>
+          <div class="portfolio-meta">
+            <span class="portfolio-role">Full Production</span>
+            <span class="portfolio-official">Official Video</span>
+          </div>
           <h4>ALTA MAREA</h4>
           <p class="portfolio-artist">Michelle Go!</p>
           <div class="portfolio-genres"><span>Pop</span><span>Latin Trap</span></div>
+          <div class="portfolio-views">4.3K views</div>
           <a href="https://open.spotify.com/track/7fvdW3CmKHPLF4GRLYteWv" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
@@ -167,10 +191,14 @@
           <iframe src="https://www.youtube-nocookie.com/embed/Os_IXyhK_pM" title="TE LO CUENTO — Gaby Swan x Azul Dario x El Gallo Güero" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
-          <span class="portfolio-role">Full Production</span>
+          <div class="portfolio-meta">
+            <span class="portfolio-role">Full Production</span>
+            <span class="portfolio-official">Official Video</span>
+          </div>
           <h4>TE LO CUENTO</h4>
           <p class="portfolio-artist">Gaby Swan × Azul Dario × El Gallo Güero</p>
           <div class="portfolio-genres"><span>Latin Trap</span><span>Urban</span></div>
+          <div class="portfolio-views">19.6K views</div>
           <a href="https://open.spotify.com/track/4UkH92PJizcWd05jafFbkI" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
@@ -180,10 +208,14 @@
           <iframe src="https://www.youtube-nocookie.com/embed/tGdGk_sysDU" title="SABOR PIÑA — Socra Robes x El Gallo Güero" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
-          <span class="portfolio-role">Full Production</span>
+          <div class="portfolio-meta">
+            <span class="portfolio-role">Full Production</span>
+            <span class="portfolio-official">Official Video</span>
+          </div>
           <h4>SABOR PIÑA</h4>
           <p class="portfolio-artist">Socra Robes × El Gallo Güero</p>
           <div class="portfolio-genres"><span>Latin Trap</span></div>
+          <div class="portfolio-views">3.6K views</div>
           <a href="https://open.spotify.com/track/50BLk3Zkm0JXOAJFJL7d4O" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
@@ -206,7 +238,10 @@
           <iframe src="https://www.youtube-nocookie.com/embed/T6y0YrvDhxk" title="MILLÓN PENDIENTE — Dante RMZ x El Gallo Güero" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="portfolio-info">
-          <span class="portfolio-role">Full Production</span>
+          <div class="portfolio-meta">
+            <span class="portfolio-role">Full Production</span>
+            <span class="portfolio-official">Official Audio</span>
+          </div>
           <h4>MILLÓN PENDIENTE</h4>
           <p class="portfolio-artist">Dante RMZ × El Gallo Güero</p>
           <div class="portfolio-genres"><span>Urban</span><span>Latin Trap</span></div>
@@ -249,6 +284,7 @@
           <h4>DZOGCHEN</h4>
           <p class="portfolio-artist">Sol Disciple</p>
           <div class="portfolio-genres"><span>Hip-Hop</span><span>Indie</span></div>
+          <div class="portfolio-views">8.3K views</div>
           <a href="https://open.spotify.com/track/5zsmb2YeH65lhDUc11Q0gw" target="_blank" rel="noopener" class="btn btn-primary portfolio-spotify">Listen on Spotify ↗</a>
         </div>
       </div>
@@ -284,7 +320,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="store.html">Store</a></li>
+          <li><a href="https://www.supportthecreators.com" target="_blank" rel="noopener">Merchandise</a></li>
         </ul>
       </div>
       <div class="footer-col">
