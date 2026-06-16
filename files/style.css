@@ -22,7 +22,7 @@
   --font-mono:    'Space Mono', monospace;
   --font-body:    'DM Sans', sans-serif;
 
-  --nav-h: 72px;
+  --nav-h: 96px;
   --max-w: 1200px;
   --radius: 4px;
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -62,7 +62,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .logo-solar { color: var(--sun); }
 .logo-punch { color: var(--white); }
-.nav-logo img { height: 46px; width: auto; display: block; }
+.nav-logo img { height: 66px; width: auto; display: block; }
 
 .nav-links {
   display: flex; align-items: center; gap: 32px;
@@ -749,8 +749,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
+  :root { --nav-h: 80px; }
   .nav { padding: 0 24px; }
-  .nav-logo img { height: 40px; }
+  .nav-logo img { height: 54px; }
   .nav-links {
     display: none;
     position: fixed; inset: 0; top: var(--nav-h);
