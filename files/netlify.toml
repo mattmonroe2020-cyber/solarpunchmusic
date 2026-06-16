@@ -5,6 +5,17 @@
 [build]
   publish = "."
 
+# Store was merged into Services — redirect old links instead of 404ing
+[[redirects]]
+  from = "/store"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/store.html"
+  to = "/services"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
