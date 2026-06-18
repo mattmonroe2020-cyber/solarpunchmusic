@@ -237,10 +237,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   letter-spacing: 0.35em;
   animation: fade-up 0.8s 0.4s both;
 }
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 14px;
+  animation: fade-up 0.8s 0.4s both;
+}
+.hero-tagline b { color: var(--sun); font-weight: 500; }
 .hero-sub {
   font-size: 1.05rem;
   color: var(--light);
-  margin-bottom: 36px;
+  max-width: 620px;
+  margin: 0 auto 36px;
   font-weight: 300;
   animation: fade-up 0.8s 0.5s both;
 }
