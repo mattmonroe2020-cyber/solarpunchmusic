@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://solarpunchmusic.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/services"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/portfolio"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/booking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/booking"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/booking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/booking"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/about"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/contact"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/es/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/services"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/services"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/es/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/portfolio"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/es/booking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/booking"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/booking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/booking"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/about"/>
+  </url>
+  <url>
+    <loc>https://solarpunchmusic.com/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solarpunchmusic.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://solarpunchmusic.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solarpunchmusic.com/contact"/>
+  </url>
+</urlset>
